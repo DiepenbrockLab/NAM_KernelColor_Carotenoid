@@ -2,6 +2,7 @@
 Scripts for LaPorte et al. (2021)
 
 A short description of the included scripts:
+- 1a: Calculates a correlation matrix across significant markers
 - 1b: Calculates adjusted P-values with the multtest library using the imputed markers (GBS SNPs), transformed BLUES, and output from the joint linkage analysis.
 - 2a: Consolidates GWAS results into a single file.
 - 3c: Updates tabular summary of GWAS results

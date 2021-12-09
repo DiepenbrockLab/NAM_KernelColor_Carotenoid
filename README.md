@@ -11,3 +11,4 @@ A short description of the included scripts:
 - 5a: Calculates correlations of allelic effect estimates for traits 1 and 2 (etc.) for a given QTL when fitting the final JL model for trait 1 using trait 2 BLUEs (etc.) - part of pleiotropy analyses.
 - 5b: Formats results from 5a into matrix formulation in preparation for plotting.
 - RandomForest10Fam: this script includes the code for the Random Forest, which predicts kernel color based on carotenoid values. Included also in this script is the Linear Model run on the same data, as well as the parameter optimization (grid search).
+- tassel4-updated.zip: Custom build of TASSEL 4 that was used in the GWAS conducted herein.

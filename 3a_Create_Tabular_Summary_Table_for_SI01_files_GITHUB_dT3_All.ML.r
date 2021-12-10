@@ -37,11 +37,12 @@ genotypes <- read.table(paste(geno.path,"/imputedMarkers.allchr.0.1cm.final.Panz
 candidate.gene.list <- read.table(paste(tabSummary.path,"Supplem.Data.Set.1_carot_candidate_genes DEAN.EDITS_DONE_forR.txt",sep=''), head = TRUE,stringsAsFactors=FALSE)
 trait <- c('a_carotene',	'b_carotene',	'b_cryp',	'lutein',	'phytofluene',	'zeaxanthin',	'zeino',	'total_carot')
 
-pop.seq <- as.data.frame(as.factor(c("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13",
-                                    "14", "15", "16", "18", "19", "20", "21", "22", "23", "24", "25", "26")))
-founder.names <- as.data.frame(c("B97", "CML103", "CML228", "CML247", "CML277", "CML322", "CML333", "CML52", 
-                                 "CML69", "Hp301", "Il14H", "Ki11", "Ki3", "Ky21", "M162W", "M37W", "Mo18W", 
-                                 "MS71", "NC350", "NC358", "Oh43", "Oh7B", "P39", "Tx303", "Tzi8"))
+pop.seq <- as.data.frame(as.factor(c("01", "03", "08", 
+                                     "10", "12", "13",
+                                     "20", "21", "23",  
+                                     "25")))
+founder.names <- as.data.frame(c("B97", "CML228", "CML52", 
+                                 "HP301", "KI11","KI3", "NC350", "NC358", "OH7B","TX303"))
 NAM.pops <- cbind(pop.seq, founder.names)
 colnames(NAM.pops) <- c("Pop.num", "Pop.Founders")
 
@@ -144,8 +145,10 @@ for(i in trait){
   pop.by.marker.effects <- cbind(pop.term, marker.term, pop.by.marker.effects)
   
   #This following sequence is used to figure out which family has no pop*marker effect estimate (this arises when the heritabilities are zero)
-  pop.seq <- as.data.frame(as.factor(c("01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13",
-                         "14", "15", "16", "18", "19", "20", "21", "22", "23", "24", "25", "26")))
+  pop.seq <- as.data.frame(as.factor(c("01", "03", "08", 
+                                       "10", "12", "13",
+                                       "20", "21", "23",  
+                                       "25")))
   
   colnames(pop.seq)[1] <- "Pop"
   

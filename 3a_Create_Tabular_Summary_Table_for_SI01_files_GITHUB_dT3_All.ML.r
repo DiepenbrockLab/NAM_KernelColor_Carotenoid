@@ -168,8 +168,8 @@ for(i in trait){
       write.table(additive.effects, paste(PVEvalidat.path,"Additive.effects.temp.", i,".txt", sep = ""), sep = "\t", row.names = FALSE, quote = FALSE)
     }
   
-    if(nrow(additive.effects) != 25){
-     print("There were fewer than 25 rows in additive effects.")
+    if(nrow(additive.effects) != 10){
+     print("There were fewer than 10 rows in additive effects.")
      #Objective: Put nf.vector, Vf.vector into a matrix, and then merge it with the additve effect estimates
      vectors <- as.data.frame(cbind(pop.seq, nf.vector, Vf.vector))    
      add.and.vectors <- merge(additive.effects, vectors, by.x = "pop.term", by.y = "Pop")

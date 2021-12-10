@@ -21,7 +21,7 @@ extractinate.GWAS.SNPs <- function(){
                                        "pop20", "pop21", "pop23",  
                                        "pop25")))
   founder.names <- as.data.frame(c("B97", "CML228", "CML52", 
-                                  "HP301", "KI11","KI3", "NC350", "NC358", "OH7B","TX303"))
+                                  "HP301", "KI11", "Ki3", "NC350", "NC358", "OH7B","TX303"))
   NAM.pops <- cbind(pop.seq, founder.names)
   colnames(NAM.pops) <- c("Pop.num", "Pop.Founders")
   
@@ -62,21 +62,17 @@ extractinate.GWAS.SNPs <- function(){
 ##########################################################################
 ##########################################################################
 #Set the working directory
-#setwd("C:/Users/chdiep/Documents/Model_Fitting_2019_from.Server/")
-setwd("C:/Users/mishi/OneDrive/Documents/R Projects/3c/")
+setwd("C:/Users/chdiep/Documents/NAM_KernelColor_Carot/")
 home.dir <- getwd()
 #geno.path = paste(home.dir, "/Geno.Pheno_Inputs/",sep='') #CHD commented 11/4/19, not used in this script
 #trait <- c("aT","aT3","dT","dT3","gT","gT3","PC8","totalT","totalT3","totalTocochrs") 
 trait <- c("a_carotene","b_carotene","b_cryp","lutein","phytofluene","zeaxanthin","zeino","total_carot","traitKC")
 #trait = "dT3" #CHD added 19 May for re-do
 #GWAS.results.path = "C:/Users/chdiep/Documents/Model_Fitting_2019_from.Server/Master_Files_forGWAS/GWAS_Results_fromCBSU_CNVsRemoved/Summaries_by_Trait/" #CHD commented 1/4/2020 to run with upliftable GWAS results
-#GWAS.results.path = "C:/Users/chdiep/Documents/Model_Fitting_2019_from.Server/Master_Files_forGWAS/GWAS_Results_fromCBSU_CNVs.Removed_Upliftable/Summaries_by_Trait/"
-#GWAS.results.path = "C:/Users/chdiep/Documents/Model_Fitting_2019_from.Server/Master_Files_forGWAS/GWAS_Results_fromCBSU_CNVs.Removed_Upliftable/Summaries_by_Trait/"
-GWAS.results.path =  "C:/Users/mishi/Dropbox/NAM_KernelColor_HPLC/Results/GWAS_Results_forMishi/Summaries_by_Trait/"
+GWAS.results.path = "C:/Users/chdiep/Documents/NAM_KernelColor_Carot/GWASResults_Upliftable/Summaries_by_Trait/" #CHD changed from GWAS results for Mishi
 trait.set <- "carot"
 RMIP_cutoff = 5
-#tabSummary.path = "C:/Users/chdiep/Documents/Model_Fitting_2019_from.Server/Summary_Tables.Figures/"
-tabSummary.path = "C:/Users/mishi/OneDrive/Documents/R Projects/3c/"
+tabSummary.path = "C:/Users/chdiep/Documents/NAM_KernelColor_Carot/"
 
 #Read in the appropriate files
 # summary with common support intervals
@@ -104,5 +100,4 @@ for(i in 1:nrow(tabular.summary)){
 tabular.summary <- cbind(tabular.summary, the.GRZM.results, the.SNP.results)
 
 #Output the updated tabular summary
-write.table(tabular.summary, paste(tabSummary.path,"Tab_Sum_",trait.set,"_alpha.01_SI_with_Overlapping_GWAS_SNPs_2019_Carot_Upliftable.txt",sep=''), sep = "\t", row.names = FALSE, quote = FALSE) #CHD added _Upliftable suffix 1/4/2020
-
+write.table(tabular.summary, paste(tabSummary.path,"Tab_Sum_",trait.set,"_alpha.01_SI_with_Overlapping_GWAS_SNPs_2019_CarotKC_Upliftable.txt",sep=''), sep = "\t", row.names = FALSE, quote = FALSE) #CHD added _Upliftable suffix 1/4/2020
